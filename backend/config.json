@@ -1,0 +1,6 @@
+{
+  "image_dir": "C:/StabilityMatrix/Data/Packages/ComfyUI/output",
+  "frontend_dist": "../frontend/dist",
+  "workflow_dir" : "./workflows",
+  "comfy_url" : "http://127.0.0.1:8188"
+}
