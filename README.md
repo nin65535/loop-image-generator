@@ -12,7 +12,7 @@
 ## 技術構成
 
 - **BackEnd:** FastAPI（ComfyUI連携、画像生成処理）
-- **FrontEnd:** React（画像選択UI、WebSocket通信）
+- **FrontEnd:** React（画像選択UI）
 - **Image Generator:** Stable Diffusion (via ComfyUI)
 - **Prompt Extractor:** WD14Tagger (via ComfyUI)
 
@@ -40,6 +40,12 @@ cd backend && uvicorn main:app --reload
 cd frontend && yarn dev
 
 4. ブラウザで http://localhost:3000 にアクセス
+
+## 動作確認環境
+
+- Python 3.8.10
+- ComfyUI v0.3.37
+- Node.js v22.15.1
 
 ## 備考
 
