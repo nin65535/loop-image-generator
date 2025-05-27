@@ -16,13 +16,17 @@
 - **Image Generator:** Stable Diffusion (via ComfyUI)
 - **Prompt Extractor:** WD14Tagger (via ComfyUI)
 
-## 動作イメージ（例）
+## 動作イメージ
 
 1. 最初に簡単なプロンプトで画像生成
 ![説明画像01](images/ss01.png)
 
-2. 出力された画像を選択することで　プロンプトを生成
+2. 出力された画像を選択すると　画像から自動でプロンプトが生成される
 ![説明画像02](images/ss02.png)
+
+3. 2で出力されたプロンプトをもとに画像生成
+
+4. 2,3 を繰り返すことで精度を上げていく
 
 ## 使用方法
 
