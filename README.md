@@ -4,20 +4,6 @@
 
 ## 概要
 
-- 初期プロンプトから画像を10枚生成
-- 気に入った画像を選択 → itot技術によりプロンプト抽出
-- 抽出された複数プロンプトを合成し、再度画像生成
-- 上記を繰り返すことで、好みに沿った画像に収束可能
-
-## 技術構成
-
-- **BackEnd:** FastAPI（ComfyUI連携、画像生成処理）
-- **FrontEnd:** React（画像選択UI）
-- **Image Generator:** Stable Diffusion (via ComfyUI)
-- **Prompt Extractor:** WD14Tagger (via ComfyUI)
-
-## 動作イメージ
-
 1. 最初に簡単なプロンプトで画像生成
 ![説明画像01](images/ss01.png)
 
@@ -27,6 +13,13 @@
 3. 2で出力されたプロンプトをもとに画像生成
 
 4. 2,3 を繰り返すことで精度を上げていく
+
+## 技術構成
+
+- **BackEnd:** FastAPI（ComfyUI連携、画像生成処理）
+- **FrontEnd:** React（画像選択UI）
+- **Image Generator:** Stable Diffusion (via ComfyUI)
+- **Prompt Extractor:** WD14Tagger (via ComfyUI)
 
 ## 使用方法
 
