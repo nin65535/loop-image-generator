@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4  # ← 最新バージョンに合わせて変更可能
+    hooks:
+      - id: ruff
+        args: [--fix]  # 自動修正を有効にする（なければチェックのみ）
