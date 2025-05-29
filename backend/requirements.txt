@@ -2,3 +2,4 @@ fastapi
 uvicorn[standard]
 pydash
 httpx
+python-multipart

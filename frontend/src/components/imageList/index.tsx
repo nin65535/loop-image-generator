@@ -1,6 +1,5 @@
 import React from "react"
 import { Card } from "react-bootstrap"
-import config from "~/app.config"
 import { useIndex } from "~/hooks/images/useIndex"
 import { Preview } from "../preview"
 
@@ -15,4 +14,3 @@ const ListMain: React.FC = () => {
         </Card.Body>
     </Card>
 }
- 

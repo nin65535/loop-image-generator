@@ -6,6 +6,8 @@ export const paramsSchema = z.object({
     prompt: z.string(),
     width: z.number(),
     height: z.number(),
+    count: z.number(),
+    style: z.number(),
 })
 
 export type Params = z.infer<typeof paramsSchema>

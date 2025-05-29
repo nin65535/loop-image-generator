@@ -11,8 +11,8 @@ const SIZE_OPTIONS = [
     { width: 1344, height: 768 },
 ]
 
-export const Sizes: React.FC = () => {
-    const options = SIZE_OPTIONS.map((so, i) => <option value={i} key={i}>{`${so.width} x ${so.height}`}</option>)
+export const ImageSizes: React.FC = () => {
+    const options = SIZE_OPTIONS.map((so, i) => <option value={i} key={i}>{`W:${so.width} x H:${so.height}`}</option>)
     const [params, setParams] = useAtom(paramsAtom)
     const value = SIZE_OPTIONS.findIndex(so => so.width == params.width && so.height == params.height)
 
@@ -26,7 +26,7 @@ export const Sizes: React.FC = () => {
     }, [setParams])
 
     const style: React.CSSProperties = {
-        width: 240
+        width: 180
     }
     return <Form.Select value={value} onChange={onChange} style={style}>
         {options}

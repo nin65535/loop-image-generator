@@ -5,26 +5,42 @@ import { Debug } from "./components/debug";
 import { Images } from "./components/images";
 import { PromptMaker } from "./components/promptMaker";
 import { ClearButton } from "./components/clearButton";
-import { Sizes } from "./components/sizes";
+import { Screen } from "~/components/screen";
+import { ImageSizes } from "./components/imageSizes";
+import { ImageCount } from "./components/imageCount";
+import { PreviewSizes } from "./components/previewSizes";
+import { UploadButton } from "./components/uploadButton";
+import { Styles } from "./components/styles";
 
 export default function Home() {
     return <>
-
         <Card>
-            <Card.Body>
+            <Card.Body className='py-2'>
                 <Prompt />
-                <div className='d-flex gap-1 py-2'>
+                <div className='d-flex gap-1 mt-2'>
                     <InputGroup style={{ width: "auto" }}>
-                        <Sizes />
+                        <Styles />
+                        <ImageSizes />
+                        <ImageCount />
                         <GenerateButton />
                     </InputGroup>
                     <div className='col' />
-                    <ClearButton />
                 </div>
             </Card.Body>
         </Card>
+        <Card className='mt-2'>
+            <Card.Body className='py-2'>
+                <div className='d-flex gap-1'>
+                    <PreviewSizes />
+                    <div className='col' />
+                    <UploadButton />
+                    <ClearButton />
+                </div>
+                <Images />
+            </Card.Body>
+        </Card>
+        <Screen />
         <PromptMaker />
-        <Images />
-        <Debug />
+        {/* <Debug /> */}
     </>
 }

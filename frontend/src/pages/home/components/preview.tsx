@@ -1,17 +1,19 @@
 import { atom, useAtom, useAtomValue, useStore, } from "jotai"
 import { Preview as PreviewBase } from "~/components/preview"
-import { promptSourcesAtom } from "../atoms/pageDataAtom"
+import { previewWidthAtom, promptSourcesAtom } from "../atoms/pageDataAtom"
 import React from "react"
 import _ from "lodash"
 import { PromptReader } from "./promptReader"
+import { screenAtom } from "~/components/screen/atoms/screenAtom"
 
 export { PreviewWraped as Preview }
 
-export const promptReadingAtom = atom<string[]>([])
-
-const PreviewWraped: React.FC<{ file: string }> = ({ file }) => <Frame file={file}>
-    <PreviewBase file={file} />
-</Frame>
+const PreviewWraped: React.FC<{ file: string }> = ({ file, }) => {
+    const maxWidth = useAtomValue(previewWidthAtom)
+    return <Frame file={file}>
+        <PreviewBase file={file} style={{ maxWidth }} />
+    </Frame>
+}
 
 const Frame: React.FC<React.PropsWithChildren<{ file: string }>> = ({ file, children }) => {
     const ref = React.useRef<HTMLDivElement>(null)
@@ -97,11 +99,10 @@ const CoverColor: React.FC<{ parent: React.RefObject<HTMLDivElement>, file: stri
 
     const store = useStore()
     React.useEffect(() => {
-        store.set(promptReadingAtom, [...store.get(promptReadingAtom), file])
+        store.set(screenAtom, store.get(screenAtom) + 1)
         return () => {
-            store.set(promptReadingAtom, store.get(promptReadingAtom).filter(f => f != file))
+            store.set(screenAtom, store.get(screenAtom) - 1)
         }
-
     }, [store, file])
     return <div style={style} />
 }
