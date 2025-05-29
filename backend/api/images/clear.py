@@ -16,7 +16,7 @@ async def clear():
             "success":True,
         }
 
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         return {
             "success":False,
         }

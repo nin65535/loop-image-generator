@@ -48,7 +48,7 @@ async def generate(params:Params):
                 "response" : data,
             }
 
-        except httpx.RequestError as e:
+        except httpx.RequestError:
             return {
                 "success":False,
             }

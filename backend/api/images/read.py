@@ -38,7 +38,7 @@ async def read(params:Params):
                 "response" : data,
             }
 
-        except httpx.RequestError as e:
+        except httpx.RequestError:
             return {
                 "success":False,
             }

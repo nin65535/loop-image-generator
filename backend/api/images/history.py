@@ -16,7 +16,7 @@ async def history(prompt_id:str):
             "response" : data,
         }
 
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         return {
             "success":False,
         }

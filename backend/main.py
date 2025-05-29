@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from config import config
+from api import api_router
 import os
 
 
@@ -26,7 +27,6 @@ app.mount("/images", StaticFiles(directory=IMAGE_DIR), name="images")
 
 
 # API マウント
-from api import api_router
 app.include_router(api_router,prefix='/api')
 
 
