@@ -64,7 +64,7 @@
   },
   "7": {
     "inputs": {
-      "text": "text, watermark,normal quality,low quality,worst quality",
+      "text": "text, watermark,normal quality,low quality,worst quality,bad anatomy",
       "clip": [
         "4",
         1

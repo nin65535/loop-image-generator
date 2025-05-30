@@ -4,12 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from config import config
 from api import api_router
+from utils.paths import PROJECT_ROOT
+
 import os
 
 
-IMAGE_DIR = config.get("image_dir", "./images")
-FRONTEND_DIST = config.get("frontend_dist", "frontend/dist")
-INDEX_PATH = os.path.join(FRONTEND_DIST, "index.html")
+IMAGE_DIR = PROJECT_ROOT / config.get("image_dir")
+FRONTEND_DIST = PROJECT_ROOT / config.get("frontend_dist")
+INDEX_PATH = FRONTEND_DIST / 'index.html'
 
 app = FastAPI()
 

@@ -6,11 +6,13 @@ from fastapi import APIRouter
 from pathlib import Path
 from config import config
 from pydantic import BaseModel
+from utils.paths import PROJECT_ROOT
 
 router = APIRouter()
 
 prompt_url = config.get('comfy_url') + '/prompt'
-workflow_path = Path(config.get("workflow_dir")).joinpath('read.json')
+workflow_path = PROJECT_ROOT / config.get("workflow_dir") / 'read.json'
+
 with open(file=workflow_path,encoding='utf-8') as f:
     workflow_template = json.load(f)
 
