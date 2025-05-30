@@ -17,7 +17,7 @@ export const UploadButton: React.FC = () => {
     const screen = useScreen()
     const store = useStore()
 
-    const onClick = React.useCallback<React.MouseEventHandler<HTMLButtonElement>>(ev => {
+    const onClick = React.useCallback<React.MouseEventHandler<HTMLButtonElement>>(() => {
         refFile.current?.click()
     }, [refFile])
 
@@ -36,7 +36,7 @@ export const UploadButton: React.FC = () => {
                 })
         }
 
-    }, [refFile])
+    }, [refFile, mutate, screen, store, upload])
     return <>
         <input type='file' className="d-none" ref={refFile} accept=".png" onChange={onChange} />
         <Button onClick={onClick}>

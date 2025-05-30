@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAtomValue } from "jotai"
 import { Modal } from "react-bootstrap"
 import { screenAtom } from "./atoms/screenAtom"
+import React from "react"
 
 export const Screen: React.FC = () => {
     const screen = useAtomValue(screenAtom)

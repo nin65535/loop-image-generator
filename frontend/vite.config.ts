@@ -1,4 +1,3 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -22,11 +21,11 @@ export default defineConfig({
             "node_modules/": "/node_modules",
         }
     },
-    css:{
-        preprocessorOptions:{
+    css: {
+        preprocessorOptions: {
             scss: {
-                api : "modern-compiler",
-                silenceDeprecations:[
+                api: "modern-compiler",
+                silenceDeprecations: [
                     'mixed-decls',
                     'color-functions',
                     'global-builtin',

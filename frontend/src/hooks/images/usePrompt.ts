@@ -19,7 +19,7 @@ export const usePrompt = (image: string): SWRResponse<string> => {
     const fetcher = React.useCallback((url: string) => {
         return axios.get(url)
             .then(res => res.data)
-            .catch(async e => {
+            .catch(async () => {
                 const res = await read({ image })
                 const prompt_id = _.get(res, 'response.prompt_id')
 
@@ -33,7 +33,7 @@ export const usePrompt = (image: string): SWRResponse<string> => {
                     .then(res => res.data)
             })
 
-    }, [read])
+    }, [read, image, wait])
 
     const url = replaceExtension(config.imageBase + '/' + image, '.txt')
 

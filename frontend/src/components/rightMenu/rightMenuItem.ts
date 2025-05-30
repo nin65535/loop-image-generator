@@ -14,7 +14,7 @@ export const RightMenuItem: React.FC<React.PropsWithChildren> = ({ children }) =
                 store.set(atom, store.get(atom).filter(i => i != children))
             }
         }
-    }, [children])
+    }, [children, atom, store])
 
 
     return null

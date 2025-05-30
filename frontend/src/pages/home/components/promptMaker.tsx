@@ -1,5 +1,5 @@
 import { atom, useAtomValue, useStore } from "jotai"
-import { promptAtom, promptSourcesAtom } from "../atoms/pageDataAtom"
+import { promptAtom, } from "../atoms/pageDataAtom"
 import React from "react"
 import _ from "lodash"
 
@@ -20,10 +20,10 @@ export const PromptMaker: React.FC = () => {
 
         const countWords = getCountWords(words)
         const waitedPrompts = Object.entries(countWords)
-            .sort((a,b)=>{
-                const [wa,ca] = a
-                const [wb,cb] = b
-                if( ca == cb){
+            .sort((a, b) => {
+                const [wa, ca] = a
+                const [wb, cb] = b
+                if (ca == cb) {
                     return wa < wb ? -1 : 1
                 }
 

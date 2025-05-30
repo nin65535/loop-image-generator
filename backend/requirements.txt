@@ -1,7 +1,5 @@
-fastapi
-uvicorn[standard]
-pydash
-httpx
-python-multipart
-ruff
-pre-commit
+fastapi==0.115.12
+httpx==0.28.1
+pydantic==2.11.5
+pydash==8.0.5
+Requests==2.32.3

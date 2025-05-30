@@ -12,6 +12,6 @@ export const PromptReader: React.FC<{ file: string }> = ({ file }) => {
         return () => {
             store.set(promptsAtom, store.get(promptsAtom).filter(p => p.image != file))
         }
-    }, [file, store])
+    }, [file, store, prompt])
     return null
 }

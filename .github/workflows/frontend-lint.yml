@@ -1,0 +1,37 @@
+name: Frontend Lint & Type Check (Yarn)
+
+on:
+  push:
+    paths:
+      - 'frontend/**'
+  pull_request:
+    paths:
+      - 'frontend/**'
+
+jobs:
+  lint-and-typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v3
+
+      - name: Node.js をセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # プロジェクトに合わせて調整
+
+      - name: 依存パッケージをインストール（Yarn）
+        run: |
+          cd frontend
+          yarn install --frozen-lockfile
+
+      - name: ESLint を実行
+        run: |
+          cd frontend
+          yarn lint
+
+      - name: TypeScript チェックを実行
+        run: |
+          cd frontend
+          yarn type-check

@@ -15,5 +15,6 @@ export const Preview: React.FC<React.HTMLProps<HTMLImageElement> & { file: strin
         {...props}
         src={path}
         style={style}
+        alt={file}
     />
 } 

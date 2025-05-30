@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { useAtomValue, useStore } from "jotai"
+import { useStore } from "jotai"
 import React from "react"
 import { Button } from "react-bootstrap"
 import { pageDataAtom, promptSourcesAtom, } from "../atoms/pageDataAtom"
@@ -31,7 +31,7 @@ export const GenerateButton: React.FC = () => {
 
         mutate()
         store.set(promptSourcesAtom, [])
-    }, [store])
+    }, [store, generate, mutate, screen, wait])
     return <Button onClick={onClick}>
         Generate
     </Button>

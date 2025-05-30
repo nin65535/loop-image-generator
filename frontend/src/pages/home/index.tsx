@@ -1,7 +1,6 @@
 import { Card, InputGroup } from "react-bootstrap";
 import { Prompt } from "./components/prompt";
 import { GenerateButton } from "./components/generateButton";
-import { Debug } from "./components/debug";
 import { Images } from "./components/images";
 import { PromptMaker } from "./components/promptMaker";
 import { ClearButton } from "./components/clearButton";
@@ -41,6 +40,5 @@ export default function Home() {
         </Card>
         <Screen />
         <PromptMaker />
-        {/* <Debug /> */}
     </>
 }

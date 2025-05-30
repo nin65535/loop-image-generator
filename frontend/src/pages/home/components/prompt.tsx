@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap"
 import { promptAtom } from "../atoms/pageDataAtom"
-import { useAtom, useAtomValue, } from "jotai"
+import { useAtom, } from "jotai"
 import React from "react"
 
 export const Prompt: React.FC = () => {

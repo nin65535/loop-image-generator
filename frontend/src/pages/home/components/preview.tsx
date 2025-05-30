@@ -1,4 +1,4 @@
-import { atom, useAtom, useAtomValue, useStore, } from "jotai"
+import { useAtom, useAtomValue, useStore, } from "jotai"
 import { Preview as PreviewBase } from "~/components/preview"
 import { previewWidthAtom, promptSourcesAtom } from "../atoms/pageDataAtom"
 import React from "react"
@@ -29,7 +29,7 @@ const Frame: React.FC<React.PropsWithChildren<{ file: string }>> = ({ file, chil
             (promptSources.filter(f => f != file)) :
             (promptSources.concat(file))
         setPromptSources(newSources)
-    }, [promptSources, setPromptSources])
+    }, [promptSources, setPromptSources, checked, file,])
 
 
     return <div
@@ -84,10 +84,8 @@ const CoverBorder: React.FC<{ parent: React.RefObject<HTMLDivElement> }> = ({ pa
 }
 
 const CoverColor: React.FC<{ parent: React.RefObject<HTMLDivElement>, file: string }> = ({ parent, file }) => {
-    const rect = parent.current?.getBoundingClientRect()
-    if (!rect) {
-        return null
-    }
+    const rect = parent.current!.getBoundingClientRect()!
+
     const style: React.CSSProperties = {
         width: rect.width,
         height: rect.height,

@@ -1,4 +1,4 @@
-import { atom, useAtom, useAtomValue, useStore } from "jotai";
+import { atom, useAtomValue, useStore } from "jotai";
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import { MenuItemsAtomProvider, useMenuItemsAtom } from "./hooks/useMenuItemsAtom";
@@ -30,6 +30,7 @@ export const RightMenu: React.FC<React.HTMLProps<HTMLDivElement>> = ({ children,
     return <MenuItemsAtomProvider value={menuItemsAtom}>
         <ItemPositionAtomProvider value={itemPositionAtom}>
             <div
+                role='button'
                 ref={refDiv}
                 {...props}
                 style={style}
