@@ -3,13 +3,13 @@ import { atom } from 'jotai'
 import { paramsSchema } from "../../../hooks/images/useGenerate";
 import { focusAtom } from "jotai-optics";
 
-export const pageDataShcema = z.object({
+export const pageDataSchema = z.object({
     params: paramsSchema,
     prompt_sources: z.array(z.string()),
     preview_width: z.number()
 })
 
-type PageData = z.infer<typeof pageDataShcema>
+type PageData = z.infer<typeof pageDataSchema>
 
 export const pageDataAtom = atom<PageData>({
     params: {
