@@ -20,9 +20,12 @@ const url = 'images/upload'
 export const useUpload = (): UploadFunc => {
 
     const axios = useAxios()
-    return React.useCallback<UploadFunc>(({ file }) =>
-        axios.post(url, { file }, { headers: { 'Content-Type': 'multipart/form-data' } })
-            .then(res => resultSchema.parse(res.data)),
-        [axios])
+    return React.useCallback<UploadFunc>(({ file }) => {
+        const formData = new FormData()
+        formData.append('file', file)
+        return axios.post(url, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        }).then(res => resultSchema.parse(res.data))
+    }, [axios])
 
 }
